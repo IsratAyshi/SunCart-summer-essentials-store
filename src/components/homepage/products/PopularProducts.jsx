@@ -1,9 +1,17 @@
+import ProductCard from '@/components/shared/ProductCard';
+import { productsFetch } from '@/lib/data';
 import React from 'react';
+
+const Products = await productsFetch();
 
 const PopularProducts = () => {
     return (
         <div>
-            Popular Products
+            {
+                Products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))
+            }
         </div>
     );
 };
