@@ -46,7 +46,7 @@ const Navbar = () => {
                         alt="userImg" />
                 </div>
 
-                <Link href="/login"><button className="btn px-6">Login</button></Link>
+                <Link href="/login"><button className="btn px-6 bg-[#FF7F50]">Login</button></Link>
             </div>
         </div>
 

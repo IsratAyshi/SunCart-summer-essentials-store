@@ -1,17 +1,16 @@
 import React from 'react';
-import { FaFacebookF } from 'react-icons/fa';
+import { CiGlobe, CiShare2 } from 'react-icons/ci';
+import { FaFacebookF, FaRegEnvelope } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { RiInstagramFill } from 'react-icons/ri';
 
 const Footer = () => {
     return (
         <footer className="bg-[#F5E6D3] py-16">
-            <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="container mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
                     <h2 className="text-xl font-bold">Sunstede</h2>
-                    <p className="mt-2 text-gray-700">
-                        Curated coastal living experience.
-                    </p>
+                    <p className="mt-2 text-gray-700 text-sm max-w-10/12">© 2026 SUNSTEDE Summer Essentials. Curated coastal living. We bring the Mediterranean warmth to your doorstep.</p>
                 </div>
 
                 <div>
@@ -34,7 +33,10 @@ const Footer = () => {
                 <div>
                     <h3 className="text-xl font-bold">Support</h3>
                     <p>Contact</p>
-                    <p>Shipping</p>
+                    <p>Shipping & Returns</p>
+                    <div className='mt-4 flex gap-4'>
+                        <CiGlobe /><CiShare2 /><FaRegEnvelope />
+                    </div>
 
                 </div>
 

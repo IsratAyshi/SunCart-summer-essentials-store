@@ -10,3 +10,9 @@ export const brandsFetch = async () => {
     const data = await res.json();
     return data;
 }
+
+export const getProductDetailsById = async (id) => {
+    const res = await fetch(`https://summer-essentials-json-server.onrender.com/products/${id}`);
+    const data = await res.json();
+    return data;
+}

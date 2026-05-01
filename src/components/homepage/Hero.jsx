@@ -1,5 +1,7 @@
 import React from 'react';
 import summerBanner from '@/assets/SummerBanner.png';
+import { IoIosArrowForward } from 'react-icons/io';
+import Link from 'next/link';
 
 const Hero = () => {
     return (
@@ -22,7 +24,9 @@ const Hero = () => {
                     </p>
 
                     <div>
-                        <button className="bg-[#FF7F50] px-6 py-3 text-black">SHOP THE COLLECTION</button>
+                        <Link href="/products">
+                            <button className="bg-[#FF7F50] px-6 py-3 text-black flex items-center gap-2">SHOP THE COLLECTION <IoIosArrowForward className='text-xl' /></button>
+                        </Link>
                     </div>
                 </div>
             </div>
