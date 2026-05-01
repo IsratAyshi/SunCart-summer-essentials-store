@@ -1,10 +1,11 @@
 "use client";
-// import { authClient } from '@/lib/auth-client';
+import { authClient } from '@/lib/auth-client';
 // import { email } from 'better-auth';
 import Link from 'next/link';
 import React, { use, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
 
@@ -17,27 +18,26 @@ const LoginPage = () => {
     } = useForm();
 
     const handleLoginFunc = async (data) => {
-        console.log(data); //react hook use koray ar preventdefault use korte hoynai
+        // console.log(data);
 
-        // const { email, password } = data;
-        // console.log(email, password);
+        const { email, password } = data;
+        console.log(email, password);
 
 
-        //     const { data: res, error } = await authClient.signIn.email({
-        //         email: data.email,
-        //         password: data.password,
-        //         rememberMe: true,
-        //         callbackURL: "/"
+        const { data: res, error } = await authClient.signIn.email({
+            email: data.email,
+            password: data.password,
+            rememberMe: true,
+            callbackURL: "/"
 
-        //     });
+        });
 
-        //     if (error) {
-        //         alert(error.message);
-        //     }
-        //     if (res) {
-        //         alert("Login successful");
-        //     }
-        // }
+        if (error) {
+            toast.error(error.message);
+        }
+        if (res) {
+            toast.success("Login successful");
+        }
         // console.log(errors, "Errors");
         // console.log(watch("email"));
         // console.log(watch("password"));

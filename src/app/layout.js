@@ -1,16 +1,8 @@
-import { Geist, Geist_Mono, Manrope, Noto_Serif } from "next/font/google";
+import dns from "node:dns/promises";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+import { Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],

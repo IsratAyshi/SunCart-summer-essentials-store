@@ -1,14 +1,24 @@
+"use client";
 import React from 'react';
 import summerBanner from '@/assets/SummerBanner.png';
 import { IoIosArrowForward } from 'react-icons/io';
 import Link from 'next/link';
+import { animated, useSpring } from '@react-spring/web'
 
 const Hero = () => {
+
+    const buttonAnimation = useSpring({
+        from: { opacity: 0, transform: "scale(0.9)" },
+        to: { opacity: 1, transform: "scale(1)" },
+        delay: 500,
+    });
+
     return (
         <div
             className="relative hero h-[70vh] flex items-center"
             style={{
                 backgroundImage: `url(${summerBanner.src})`,
+                backgroundPosition: "top"
             }}
         >
 
@@ -23,11 +33,15 @@ const Hero = () => {
                         Embrace the warmth of the season with our curated coastal collection.  Designed for the golden hours and the endless summer spirit.
                     </p>
 
-                    <div>
+                    <animated.div
+                        style={buttonAnimation}>
                         <Link href="/products">
-                            <button className="bg-[#FF7F50] px-6 py-3 text-black flex items-center gap-2">SHOP THE COLLECTION <IoIosArrowForward className='text-xl' /></button>
+                            <button
+                                className="bg-[#FF7F50] px-6 py-3 text-black flex items-center gap-2 cursor-pointer">
+                                SHOP THE COLLECTION <IoIosArrowForward className='text-xl' />
+                            </button>
                         </Link>
-                    </div>
+                    </animated.div>
                 </div>
             </div>
 
