@@ -51,7 +51,7 @@ const RegisterPage = () => {
         <div className='py-15 bg-[#FFFBF5]/50'>
             <div className='container mx-auto min-h-[80vh] flex justify-center items-center'>
                 <div className='p-20 rounded-xl bg-white shadow'>
-                    <h2 className='font-bold text-2xl text-center'>Register Your Account</h2>
+                    <h2 className='font-bold text-2xl text-center font-noto-serif'>Register Your Account</h2>
 
                     <div className='divider mt-5 mb-1'></div>
 
@@ -65,7 +65,7 @@ const RegisterPage = () => {
                                 <input
                                     {...register('name', { required: "Name field is required" })}
                                     type="text"
-                                    className="input w-full mb-3 bg-base-200"
+                                    className="input w-full mb-3 bg-[#F5E6D3]"
                                     placeholder="Enter Your Name" />
 
                                 {errors.name && <p className="text-red-500">{errors.name.message}</p>}
@@ -77,7 +77,7 @@ const RegisterPage = () => {
                                 <input
                                     {...register('photo', { required: "Photo field is required" })}
                                     type="text"
-                                    className="input w-full mb-3 bg-base-200"
+                                    className="input w-full mb-3 bg-[#F5E6D3]"
                                     placeholder="Enter Your Photo URL" />
 
                                 {errors.photo && <p className="text-red-500">{errors.photo.message}</p>}
@@ -89,7 +89,7 @@ const RegisterPage = () => {
                                 <input
                                     {...register('email', { required: "Email field is required" })}
                                     type="email"
-                                    className="input w-full mb-3 bg-base-200"
+                                    className="input w-full mb-3 bg-[#F5E6D3]"
                                     placeholder="Email" />
 
                                 {errors.email && <p className="text-red-500">{errors.email.message}</p>}
@@ -103,7 +103,7 @@ const RegisterPage = () => {
                                         { required: "Password field is required" })}
                                     // name='password'
                                     type={showEye ? "text" : "password"}
-                                    className="input w-full mb-5 bg-base-200"
+                                    className="input w-full mb-5 bg-[#F5E6D3]"
                                     placeholder="Password" />
                                 <span className='absolute top-10 right-3'>
                                     {
@@ -120,7 +120,7 @@ const RegisterPage = () => {
 
 
 
-                            <button className="btn btn-neutral mt-4">Register</button>
+                            <button className="btn bg-[#FF7F50] mt-4 text-white font-bold">Register</button>
                         </fieldset>
                     </form>
 

@@ -21,5 +21,6 @@ export const config = {
   matcher: [
     "/myProfile",
     "/products/:path*",
+    "/updateProfile"
   ],
 }

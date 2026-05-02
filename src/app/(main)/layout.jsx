@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 const MainLayout = ({ children }) => {
     return (
         <>
+
             <Navbar />
             <ToastContainer />
             {children}

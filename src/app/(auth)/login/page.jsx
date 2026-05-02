@@ -59,7 +59,7 @@ const LoginPage = () => {
         <div className='py-15 bg-[#FFFBF5]/50'>
             <div className='container mx-auto min-h-[80vh] flex justify-center items-center'>
                 <div className='p-20 rounded-xl bg-white shadow'>
-                    <h2 className='font-bold text-2xl text-center'>Login Your Account</h2>
+                    <h2 className='font-bold text-2xl text-center font-noto-serif'>Login Your Account</h2>
 
                     <div className='divider mt-5 mb-1'></div>
 
@@ -74,7 +74,7 @@ const LoginPage = () => {
                                     {...register('email', { required: "Email field is required" })}
                                     // name='email'
                                     type="email"
-                                    className="input w-full mb-3 bg-base-200"
+                                    className="input w-full mb-3 bg-[#F5E6D3]"
                                     placeholder="Email" />
 
                                 {errors.email && <p className="text-red-500">{errors.email.message}</p>}
@@ -89,7 +89,7 @@ const LoginPage = () => {
                                         { required: "Password field is required" })}
                                     // name='password'
                                     type={showEye ? "text" : "password"}
-                                    className="input w-full mb-5 bg-base-200"
+                                    className="input w-full mb-5 bg-[#F5E6D3]"
                                     placeholder="Password" />
                                 <span className='absolute top-10 right-3'>
                                     {
@@ -104,7 +104,7 @@ const LoginPage = () => {
                             </div>
 
 
-                            <button className="btn btn-neutral mt-4">Login</button>
+                            <button className="btn bg-[#FF7F50] mt-4 text-white font-bold">Login</button>
                         </fieldset>
                     </form>
 
