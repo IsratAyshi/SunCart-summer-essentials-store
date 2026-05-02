@@ -35,7 +35,7 @@ const Hero = () => {
 
                     <animated.div
                         style={buttonAnimation}>
-                        <Link href="/products">
+                        <Link href="/allProducts">
                             <button
                                 className="bg-[#FF7F50] px-6 py-3 text-black flex items-center gap-2 cursor-pointer">
                                 SHOP THE COLLECTION <IoIosArrowForward className='text-xl' />

@@ -1,11 +1,13 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import userImg from '@/assets/user.png';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { authClient } from '@/lib/auth-client';
 import { CiUser } from 'react-icons/ci';
+import { useSearchParams } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { data: session, isPending } = authClient.useSession()
@@ -15,11 +17,21 @@ const Navbar = () => {
 
     const handleLogout = () => {
         authClient.signOut()
+
     }
+
+    // To show login succesful toast once user is logged in
+    const searchParams = useSearchParams();
+    useEffect(() => {
+        if (searchParams.get("login") === "success") {
+            toast.success("Login successful");
+        }
+    }, [searchParams]);
+
 
     const links = <>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/products">Products</Link></li>
+        <li><Link href="/allProducts">Products</Link></li>
         <li><Link href="/myProfile">My Profile</Link></li>
     </>
 

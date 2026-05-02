@@ -4,6 +4,7 @@ import { Manrope, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
 
+
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -30,7 +31,6 @@ export default function RootLayout({ children }) {
       className={`${notoSerif.variable} h-full antialiased`}
     >
       <body className={`${manrope.className} min-h-full flex flex-col`}>
-        
         {children}
          
       </body>

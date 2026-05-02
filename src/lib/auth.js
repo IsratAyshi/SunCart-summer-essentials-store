@@ -13,7 +13,8 @@ export const auth = betterAuth({
   }),
 
   emailAndPassword: { 
-    enabled: true, 
+    enabled: true,
+    autoSignIn: false, 
   },
 
   socialProviders: {

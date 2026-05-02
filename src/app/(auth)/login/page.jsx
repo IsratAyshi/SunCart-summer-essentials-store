@@ -3,7 +3,8 @@ import GoogleLogin from '@/components/shared/GoogleLogin';
 import { authClient } from '@/lib/auth-client';
 // import { email } from 'better-auth';
 import Link from 'next/link';
-import React, { use, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import React, { use, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -21,33 +22,38 @@ const LoginPage = () => {
     const handleLoginFunc = async (data) => {
         // console.log(data);
 
-        const { email, password } = data;
-        console.log(email, password);
-
-
         const { data: res, error } = await authClient.signIn.email({
             email: data.email,
             password: data.password,
             rememberMe: true,
-            callbackURL: "/"
+            callbackURL: "/?login=success",
+            // redirect: false,
 
         });
 
         if (error) {
             toast.error(error.message);
         }
-        if (res) {
-            toast.success("Login successful");
-        }
+        // if (res) {
+        //     toast.success("Login successful");
+
+        // }
         // console.log(errors, "Errors");
-        // console.log(watch("email"));
-        // console.log(watch("password"));
 
 
     }
 
     // ---- state management for password eye toggle ----
     const [showEye, setShowEye] = useState(false);
+
+    const searchParams = useSearchParams();
+    useEffect(() => {
+        if (searchParams.get("error")) {
+            // console.log(searchParams.get("error"));
+            toast.error("You need to login first to access this page.");
+        }
+    }, [searchParams]);
+
 
     return (
         <div className='py-15 bg-[#FFFBF5]/50'>

@@ -17,7 +17,7 @@ const PopularProducts = () => {
                     </div>
 
                     <div>
-                        <Link href="/products" className='text-[#FF7F50] font-semibold flex items-center gap-2 hover:underline'>View All Products<FaArrowRight /></Link>
+                        <Link href="/allProducts" className='text-[#FF7F50] font-semibold flex items-center gap-2 hover:underline'>View All Products<FaArrowRight /></Link>
                     </div>
                 </div>
 

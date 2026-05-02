@@ -32,12 +32,13 @@ const RegisterPage = () => {
             image: data.photo,
             email: data.email,
             password: data.password,
-            rememberMe: true,
-            callbackURL: "/"
+            // rememberMe: false,
+            // callbackURL: "/"
         });
 
         if (error) {
             toast.error(error.message);
+            return;
         }
         if (res) {
             toast.success("Registration successful");
