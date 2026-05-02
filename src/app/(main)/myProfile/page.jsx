@@ -14,7 +14,7 @@ const MyProfilePage = () => {
     return (
 
         <div className='py-15 bg-[#FFFBF5]/50'>
-            <div className='min-h-[80vh] flex justify-center items-center'>
+            <div className='min-h-[80vh] flex justify-center items-center px-8'>
 
                 <div className='bg-white p-20 flex flex-col  justify-center items-center shadow rounded-2xl'>
 

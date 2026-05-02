@@ -9,7 +9,7 @@ const Products = await productsFetch();
 const PopularProducts = () => {
     return (
         <div className='bg-[#fffbf5]'>
-            <div className='container mx-auto py-[80px]'>
+            <div className='container mx-auto py-[80px] px-8'>
                 <div className='flex flex-wrap gap-4 justify-between items-center'>
                     <div>
                         <h2 className="text-3xl font-noto-serif ">Popular Essentials</h2>
@@ -21,7 +21,7 @@ const PopularProducts = () => {
                     </div>
                 </div>
 
-                <div className='mx-auto pt-10 grid grid-cols-1 md:grid-cols-3  gap-10'>
+                <div className='mx-auto pt-10 grid grid-cols-1 md:grid-cols-3 gap-10'>
                     {
                         Products.slice(0, 3).map((product) => (
                             <ProductCard key={product.id} product={product} />

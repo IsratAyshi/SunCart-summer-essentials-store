@@ -7,7 +7,7 @@ const brandCards = await brandsFetch();
 
 const Brands = () => {
     return (
-        <div className="bg-[#fffbf5] py-16 text-center">
+        <div className="bg-[#fffbf5] py-16 text-center px-4">
             <p className="text-sm mb-6 uppercase font-bold">Top Curated Partnerships</p>
 
             <div className="flex flex-wrap justify-center items-center gap-12 text-2xl font-bold">
