@@ -3,7 +3,7 @@ import { productsFetch } from '@/lib/data';
 import React from 'react';
 
 export const metadata = {
-    title: "Sunstede | All Products",
+    title: "SunCart | All Products",
 
 };
 

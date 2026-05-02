@@ -29,6 +29,7 @@ const ProductDetailsPage = async ({ params }) => {
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 rounded-xl border border-[#FF7F50]'>
                     <div>
+                        <p className='mb-2 text-sm text-gray-500'>All Products / {product.category} / {product.name}</p>
                         <figure className="rounded-xl overflow-hidden">
                             <Image
                                 src={product.image}

@@ -1,10 +1,21 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import userImg from '@/assets/user.png';
 import { AiOutlineShopping } from 'react-icons/ai';
+import { authClient } from '@/lib/auth-client';
+import { CiUser } from 'react-icons/ci';
 
 const Navbar = () => {
+    const { data: session, isPending } = authClient.useSession()
+
+    const user = session?.user;
+    // console.log(user);
+
+    const handleLogout = () => {
+        authClient.signOut()
+    }
 
     const links = <>
         <li><Link href="/">Home</Link></li>
@@ -27,7 +38,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="text-3xl tracking-wider font-noto-serif font-semibold">Sunstede</a>
+                <a className="text-3xl tracking-wider font-noto-serif font-semibold">SunCart</a>
             </div>
 
             <div className="navbar-center hidden lg:flex">
@@ -36,17 +47,41 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <AiOutlineShopping className="text-2xl" />
-                <div className="w-10 rounded-full">
-                    <Image
-                        src={userImg}
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                        alt="userImg" />
-                </div>
 
-                <Link href="/login"><button className="btn px-6 bg-[#FF7F50]">Login</button></Link>
+                <AiOutlineShopping className="text-2xl" />
+
+                {
+                    isPending ? <div><span className="loading loading-spinner loading-lg"></span></div>
+                        :
+                        user ? <>
+                            <span className='text-sm'>{user.name}</span>
+                            <div className="w-10 rounded-full">
+                                <Image
+                                    src={user?.image || userImg}
+                                    width={40}
+                                    height={40}
+                                    className="rounded-full"
+                                    alt="userImg" />
+                            </div>
+                            <Link href="/login">
+                                <button onClick={handleLogout} className="btn px-6 bg-[#FF7F50]">Logout</button>
+                            </Link>
+                        </> : <>
+                            <div className="w-10 rounded-full">
+                                <Image
+                                    src={userImg}
+                                    width={40}
+                                    height={40}
+                                    className="rounded-full"
+                                    alt="userImg" />
+                            </div>
+                            <Link href="/login"><button className="btn px-6 bg-[#FF7F50]">Login</button></Link>
+                        </>
+                }
+
+
+
+
             </div>
         </div>
 

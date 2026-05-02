@@ -9,8 +9,8 @@ const Footer = () => {
         <footer className="bg-[#F5E6D3] py-16">
             <div className="container mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
-                    <h2 className="text-xl font-bold">Sunstede</h2>
-                    <p className="mt-2 text-gray-700 text-sm max-w-10/12">© 2026 SUNSTEDE Summer Essentials. Curated coastal living. We bring the Mediterranean warmth to your doorstep.</p>
+                    <h2 className="text-xl font-bold">SunCart</h2>
+                    <p className="mt-2 text-gray-700 text-sm max-w-10/12">© 2026 SUNCART Summer Essentials. Curated coastal living. We bring the Mediterranean warmth to your doorstep.</p>
                 </div>
 
                 <div>

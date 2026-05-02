@@ -18,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "Sunstede | Summer Essentials",
+  title: "SunCart | Summer Essentials Store",
   description: "A modern summer eCommerce platform where users can explore and purchase seasonal products",
 };
 

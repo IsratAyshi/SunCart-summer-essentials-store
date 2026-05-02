@@ -1,10 +1,11 @@
 "use client";
+import GoogleLogin from '@/components/shared/GoogleLogin';
 import { authClient } from '@/lib/auth-client';
 // import { email } from 'better-auth';
 import Link from 'next/link';
 import React, { use, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const LoginPage = () => {
@@ -105,7 +106,7 @@ const LoginPage = () => {
 
                     <div className="divider">OR</div>
 
-                    <button className="btn btn-info btn-outline mt-4 w-11/12 mx-4">Login with <FaGoogle /> Google</button>
+                    <GoogleLogin />
                 </div>
             </div>
         </div>
