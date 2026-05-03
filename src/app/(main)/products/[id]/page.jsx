@@ -24,7 +24,7 @@ const ProductDetailsPage = async ({ params }) => {
         <div className='bg-[#fffbf5]'>
             <div className='py-10 container mx-auto '>
                 <div className='px-15 mb-5'>
-                    <Link href={'/products'} className='text-lg font-semibold underline text-[#FF7F50] flex items-center gap-2'><FaArrowLeft /> Go to All Products</Link>
+                    <Link href={'/allProducts'} className='text-lg font-semibold underline text-[#FF7F50] flex items-center gap-2'><FaArrowLeft /> Go to All Products</Link>
                 </div>
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 rounded-xl border border-[#FF7F50]'>

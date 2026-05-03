@@ -8,6 +8,7 @@ import { authClient } from '@/lib/auth-client';
 import { CiUser } from 'react-icons/ci';
 import { useSearchParams } from 'next/navigation';
 import { toast } from 'react-toastify';
+import NavLink from './NavLink';
 
 const Navbar = () => {
     const { data: session, isPending } = authClient.useSession()
@@ -30,9 +31,9 @@ const Navbar = () => {
 
 
     const links = <>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/allProducts">Products</Link></li>
-        <li><Link href="/myProfile">My Profile</Link></li>
+        <li><NavLink href="/">Home</NavLink></li>
+        <li><NavLink href="/allProducts">Products</NavLink></li>
+        <li><NavLink href="/myProfile">My Profile</NavLink></li>
     </>
 
     return (

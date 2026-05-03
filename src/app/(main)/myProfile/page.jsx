@@ -29,7 +29,7 @@ const MyProfilePage = () => {
                             src={user?.image || userImg}
                             width={200}
                             height={200}
-                            className="rounded-full max-w-6 max-h-6"
+                            className="rounded-full max-w-45 max-h-45"
                             alt="userImg" />
                     </div>
 
